@@ -1,0 +1,51 @@
+@import "theme";
+// 标准尺寸 button
+.common-button {
+    color: #fff !important;
+    padding: 0 25px;
+    height: 36px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 36px;
+    text-align: center;
+    border-radius: 5px;
+    user-select: none;
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: @proColor;
+    transition: opacity linear .2s;
+    &:hover {
+        opacity: .8;
+    }
+    &:active {
+        opacity: .9;
+    }
+}
+.common-button-cancel {
+    &:extend(.common-button);
+    color: #333 !important;
+    background-color: #fff;
+    border: solid 1px #e0e0e0;
+}
+.common-button-large {
+    &:extend(.common-button);
+    padding: 0 40px;
+}
+
+// table 边框公共样式
+.common-table {
+    margin-top: 5px;
+    border: none;
+    .ivu-table:after {
+        content: '' !important;
+        width: 0px !important;
+    }
+}
+
+// 分页公共样式
+.common-paging {
+    text-align: center;
+    margin-top: 20px;
+}
+
+// 清楚浮动

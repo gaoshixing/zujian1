@@ -1,0 +1,259 @@
+@import "mixins.less";
+@import 'config.less';
+
+
+.x-el{
+    &-input{
+        .input();
+        &.error{
+            border-color: #f00;
+        }
+    }
+    &-title{
+        font-size: 12px;
+        text-align: left;
+        margin: 7px 0;
+        word-wrap: break-word;
+        word-break: break-all;
+        
+    }
+    &-description{
+        font-size: 12px;
+        text-align: left;
+        margin: 10px 0;
+        word-wrap: break-word;
+        word-break: break-all;
+        color: #999;
+    }
+}
+
+.x-error-tip{
+    height: 20px;
+    &-text{
+        color: #f00;
+        font-size: 12px;
+        margin: 0;
+        line-height: 20px;
+        height: 100%;
+        overflow: hidden;
+    }
+}
+
+.xel-item{
+    .required {
+        .x-el-title{
+            &:before{
+                content: '*';
+                display: inline-block;
+                margin-right: 4px;
+                line-height: 1;
+                font-family: SimSun;
+                font-size: 12px;
+                color: #ed3f14;
+                vertical-align: middle;
+            }
+        }
+    }
+    .disinline{
+        .clearfix();
+        .x-el-description{
+            display: none;
+        }
+        .x-el-title{
+            float: left;
+            width: 100px;
+            text-align: right;
+            white-space: nowrap;
+            overflow: hidden;
+            &:after{
+                content: " : ";
+                padding-right: 10px;
+            }
+        }
+        &+.x-error-tip{
+            padding-left: 100px;
+        }
+        .rightsection{
+            width: ~"calc(100% - 100px)";
+            float: left;
+        }
+        .paddingx(@w){
+            .x-el-title{
+                width: @w;
+            }
+            &+.x-error-tip{
+                padding-left: @w;
+            }
+        }
+        &.p110{
+            .paddingx(110px);
+            .rightsection{
+                width: ~"calc(100% - 110px)";
+            }
+        }
+        &.p120{
+            .paddingx(120px);
+            .rightsection{
+                width: ~"calc(100% - 120px)";
+            }   
+        }
+        &.p130{
+            .paddingx(130px);
+            .rightsection{
+                width: ~"calc(100% - 130px)";
+            }   
+        }
+        &.p140{
+            .paddingx(140px);
+            .rightsection{
+                width: ~"calc(100% - 140px)";
+            }   
+        }
+        &.p150{
+            .paddingx(150px);
+            .rightsection{
+                width: ~"calc(100% - 150px)";
+            }   
+        }
+        &.p160{
+            .paddingx(160px);
+            .rightsection{
+                width: ~"calc(100% - 160px)";
+            }   
+        }
+        &.p170{
+            .paddingx(170px);
+            .rightsection{
+                width: ~"calc(100% - 170px)";
+            }   
+        }
+        &.p180{
+            .paddingx(180px);
+            .rightsection{
+                width: ~"calc(100% - 180px)";
+            }
+        }
+        &.p190{
+            .paddingx(190px);
+            .rightsection{
+                width: ~"calc(100% - 190px)";
+            }
+        }
+    }
+    .x-inlineform{
+        .disinline{
+            .x-form-wrap{
+                .xel-item{
+                    .rightsection{
+                        width: 100%;
+                        float: none;
+                    }
+                }
+            }
+        }
+        
+    }
+
+}
+
+.x-button{
+    display: inline-block;
+    &-btn{
+        outline: none;
+        display: inline-block;
+        margin-bottom: 0;
+        font-weight: 400;
+        text-align: center;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        background-image: none;
+        border: 1px solid transparent;
+        white-space: nowrap;
+        line-height: 1.5;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        padding: 6px 15px;
+        font-size: 12px;
+        border-radius: 4px;
+        transition: color .2s linear,background-color .2s linear,border .2s linear,box-shadow .2s linear;
+        color: #495060;
+        background-color: #f7f7f7;
+        border-color: #dddee1;
+        &:hover{
+            color: @color-primary-hover;
+            background-color: #fff;
+            border-color: @color-primary-hover;
+        }
+        &[disabled]{
+            color: #bbbec4;
+            background-color: #f7f7f7;
+            border-color: #dddee1;
+            cursor: not-allowed;
+        }
+        &.primary:not([disabled]){
+            color: #fff;
+            background-color: @color-primary;
+            border-color: @color-primary;
+            &:hover{
+                background-color: @color-primary-hover;
+                border-color: @color-primary-hover;
+            }
+        }
+        &.info:not([disabled]){
+            color: #fff;
+            background-color: @color-info;
+            border-color: @color-info;
+            &:hover{
+                background-color: @color-info-hover;
+                border-color: @color-info-hover;
+            }
+        }
+        &.success:not([disabled]){
+            color: #fff;
+            background-color: @color-success;
+            border-color: @color-success;
+            &:hover{
+                background-color: @color-success-hover;
+                border-color: @color-success-hover;
+            }
+        }
+        &.warning:not([disabled]){
+            color: #fff;
+            background-color: @color-warning;
+            border-color: @color-warning;
+            &:hover{
+                background-color: @color-warning-hover;
+                border-color: @color-warning-hover;
+            }
+        }
+        &.error:not([disabled]){
+            color: #fff;
+            background-color: @color-error;
+            border-color: @color-error;
+            &:hover{
+                background-color: @color-error-hover;
+                border-color: @color-error-hover;
+            }
+        }
+        &.text:not([disabled]){
+            background-color: transparent;
+            border: none;
+            &.color-success{
+                color: @color-success;
+                &:hover{
+                    color: @color-success-hover;
+                }
+            }
+            &.color-error{
+                color: @color-error;
+                &:hover{
+                    color: @color-error-hover;
+                }
+            }
+        }
+    }
+}
